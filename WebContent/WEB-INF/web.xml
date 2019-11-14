@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>ServicosProjeto</display-name>
+  <servlet>
+    <servlet-name>ServicosProjeto</servlet-name>
+    <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>com.servicosprojeto.rest</param-value>
+    </init-param>
+    <init-param>
+      <param-name>jersey.config.server.provider.classnames</param-name>
+      <param-value>org.glassfish.jersey.filter.LoggingFilter;
+      org.glassfish.jersey.media.multipart.MultiPartFeature</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServicosProjeto</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.servicosprojeto.servlets.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  
+ 
+  <servlet>
+    <servlet-name>imagemRGBServlet</servlet-name>
+    <servlet-class>com.servicosprojeto.servlets.ImagemRGB</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>imagemRGBServlet</servlet-name>
+    <url-pattern>/ImagemRGB</url-pattern>
+  </servlet-mapping>
+</web-app>
